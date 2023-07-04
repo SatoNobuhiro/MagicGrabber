@@ -1,0 +1,4 @@
+.txt{display: inline-block;width: 80%;padding: 0.5em;border: 1px solid hsl(0, 0%, 60%);box-sizing: border-box;background: #f2f2f2;margin: 0.5em 0;}
+.screen{width: 75%;padding: 0.5em; border: 2px solid #1f4ced}
+.multiline{box-sizing: border-box;background: #f2f2f2; margin: 0.5em 0; height: 50vh; width: 80%;}
+a {margin: 1em 5px;   /* 上下に1em・左右に0px */}

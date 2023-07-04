@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+            HID管理画面
+        </title>
+        <link rel="stylesheet" href="./css/style.css" type="text/css" />
+        <script type="text/javascript" src="./js/reload.js"></script>
+    </head>
+
+    <body>
+        <form action="" method="get" onsubmit="reload();return false;">
+            <input type="text" name="duckyscript" placeholder="DuckyScriptを入力してください。" class="txt" autocomplete="off">
+            <button type="button" onclick="submit();">送信</button>
+        </form>
+
+        {}
+
+        
+        <p>前回実行：{}</p>
+        <p>ファイル：{}</p>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="data" />
+            <input type="submit" value="upload">
+        </form>
+    </body>
+
+</html>
+
