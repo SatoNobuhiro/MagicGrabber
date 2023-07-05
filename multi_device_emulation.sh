@@ -6,26 +6,26 @@
 
 case "$1" in
 start)
-        #Kernelmodul aktivieren
+        #必要となるカーネルモジュールをインポート
         modprobe libcomposite
 
-        #board config anlegen
+        #USBガジェットの作成
         mkdir /sys/kernel/config/usb_gadget/multiDeskBoard
         cd /sys/kernel/config/usb_gadget/multiDeskBoard
 
-        #hardware id setzen
+        #どのようなUSBデバイスとして見せるかの設定
         echo 0x1d6b > idVendor    #Linux Foundation
         echo 0x0104 > idProduct   #Multifunction Composite Gadget
         echo 0x0100 > bcdDevice   #v1.0.0
         echo 0x0200 > bcdUSB      #USB 2.0
 
 
-        #functionのcomposite USB向けの設定
+        #複数機能を持つUSBデバイスとしてWindowsに見せかけるにはこの設定が必要となる。
         echo 0xEF > bDeviceClass     #新規
         echo 0x02 > bDeviceSubClass  #新規
         echo 0x01 > bDeviceProtocol  #新規
 
-        #klartextbeschreibung setzen
+        #USBシリアル等の設定をここで行う。serialnumberはあえて複雑な無意味な数字にしてあり、これをもとに差し込まれたPC側はUSBメモリの特定を行う。
         mkdir strings/0x409
         cd strings/0x409
         echo "SatoNobuhiro" > manufacturer
