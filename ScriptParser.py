@@ -340,7 +340,7 @@ def StringLine(SplitLine):
         for SingleChar in INPUTSTRING:
             KeyStroke(SingleChar)
 
-#文頭がModKeyで始まっている場合の関数(5/24要修正、とりあえずは動くがModキーだけの場合の処理が規定されていない)
+#文頭がModKeyで始まっている場合の関数
 def ModKeyLine(SplitLine):
     BitOR = 0b00000000
     for command in SplitLine:
@@ -418,7 +418,7 @@ def KeyStroke(StrokeKey = b'', KeyCode = b''):
 
 
 
-#スクリプトをパースする為の
+#DuckScriptの1行を渡されると、解釈して実行する関数
 def ScriptParser(line):
     line = line.replace("\n", "")
     SplitLine = line.split(sep=" ")
