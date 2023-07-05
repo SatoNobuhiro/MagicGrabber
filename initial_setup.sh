@@ -15,9 +15,10 @@ sudo chmod 777 multi_device_emulation.sh
 
 
 USERNAME=$(whoami)
+CURRENTDIR=$(pwd)
 
 crontab -l > tmp
-echo "@reboot sleep 10; sudo /home/pi/create_usb_image.sh" > tmp
-echo "@reboot sleep 15; sudo python /home/pi/WebServer.py" >> tmp
+echo "@reboot sleep 10; sudo $CURRENTDIR/create_usb_image.sh" > tmp
+echo "@reboot sleep 15; sudo python $CURRENTDIR/WebServer.py" >> tmp
 crontab -u $USERNAME tmp
 rm tmp

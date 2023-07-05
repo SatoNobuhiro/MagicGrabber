@@ -11,6 +11,10 @@ import ScriptParser
 import subprocess
 import time
 
+#このScriptのパスを原点としてtemplateファイルを返せるようにカレントディレクトリを変更する。
+this_script_path = os.path.dirname(__file__)
+os.chdir(this_script_path)
+
 #トップページにアクセスされた際の挙動
 @route('/', method="GET")
 def gettop():
